@@ -10,9 +10,14 @@ def encode(password):
     for i in password:
         number = int(i) + 3
         result += str(number)
-
-    print("Your password has been encoded and stored!\n")
     return result
+
+def decode(password):
+    result = ""
+    for index in password:
+        num = int(index) - 
+        result += str(num)
+    return result 
 
 keep_running = True
 
@@ -23,7 +28,11 @@ while keep_running == True:
 
     if user_input == 1:
         password = input("Please enter your password to encode:")
-        encode(password)
-
+        encoded = encode(password)
+        print("Your password has been encoded and stored!\n")
+    if user_input == 2:
+       decoded = decode(encoded)
+       print(f"The encoded password is {encoded}, and the original password is {decoded}.") 
     if user_input == 3:
         keep_running = False
+        break
